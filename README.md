@@ -1,2 +1,5 @@
-# PROJETO_PNCP
-Projeto para aplicação de técnicas de engenharia e ciência de dados no Portal Nacional de Contas Públicas
+O projeto tem como objetivo centralizar e analisar os dados de contratos públicos do Portal Nacional de Contratações Públicas. A ideia é criar um ambiente de dados usando a arquitetura medalhão para entender os gastos do governo e aplicar modelos de machine learning. Todo o sistema funciona em um servidor local rodando SQL Server em uma máquina virtual.
+
+Até o momento a fundação do projeto foi concluída com a construção da camada bronze. Foi desenvolvido um script em Python que consome a API do governo de forma paginada e faz a carga incremental de todos os contratos de meados de 2023 até o fim de 2025. Durante essa fase superamos um grande desafio de infraestrutura, onde a máquina virtual bloqueava instruções do processador que o Pandas tentava usar. Resolvemos isso ajustando as versões do Python e do Numpy, garantindo a ingestão de milhões de registros de forma estável.
+
+Os próximos passos focam na transformação desses dados. A camada prata vai cuidar da limpeza, remoção de duplicatas e padronização das informações no banco de dados. Depois a camada ouro vai organizar os dados em tabelas de fatos e dimensões, separando fornecedores, locais e datas. Com essa base pronta e modelada, o Grafana será conectado para a criação dos painéis de visualização e os modelos de machine learning entrarão em cena para extrair padrões e previsões dos gastos públicos.
