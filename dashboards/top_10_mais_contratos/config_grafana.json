@@ -1,0 +1,118 @@
+{
+  "id": 1,
+  "type": "barchart",
+  "title": "TOP 10 ÓRGÃOS COM MAIOR NÚMERO DE CONTRATOS",
+  "description": "V",
+  "gridPos": {
+    "x": 0,
+    "y": 0,
+    "h": 8,
+    "w": 12
+  },
+  "fieldConfig": {
+    "defaults": {
+      "custom": {
+        "lineWidth": 1,
+        "fillOpacity": 80,
+        "gradientMode": "none",
+        "axisPlacement": "auto",
+        "axisLabel": "",
+        "axisColorMode": "text",
+        "axisBorderShow": false,
+        "scaleDistribution": {
+          "type": "linear"
+        },
+        "axisCenteredZero": false,
+        "hideFrom": {
+          "tooltip": false,
+          "viz": false,
+          "legend": false
+        },
+        "thresholdsStyle": {
+          "mode": "off"
+        }
+      },
+      "color": {
+        "mode": "thresholds"
+      },
+      "mappings": [],
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {
+            "color": "green",
+            "value": null
+          },
+          {
+            "color": "#EAB839",
+            "value": 20000
+          },
+          {
+            "color": "red",
+            "value": 50000
+          }
+        ]
+      }
+    },
+    "overrides": []
+  },
+  "pluginVersion": "12.4.1",
+  "targets": [
+    {
+      "dataset": "DB_PNCP",
+      "datasource": {
+        "type": "mssql",
+        "uid": "afivniyypju2od"
+      },
+      "editorMode": "code",
+      "format": "table",
+      "rawQuery": true,
+      "rawSql": "SELECT TOP 10\r\n    orgaoEntidade_razaoSocial AS Orgao,\r\n    COUNT(numeroControlePncpCompra) AS Quantidade_Contratos\r\nFROM silver.contratos\r\nGROUP BY orgaoEntidade_razaoSocial\r\nORDER BY Quantidade_Contratos DESC;",
+      "refId": "A",
+      "sql": {
+        "columns": [
+          {
+            "parameters": [],
+            "type": "function"
+          }
+        ],
+        "groupBy": [
+          {
+            "property": {
+              "type": "string"
+            },
+            "type": "groupBy"
+          }
+        ],
+        "limit": 50
+      }
+    }
+  ],
+  "datasource": {
+    "type": "mssql",
+    "uid": "afivniyypju2od"
+  },
+  "options": {
+    "orientation": "horizontal",
+    "xTickLabelRotation": 0,
+    "xTickLabelSpacing": 0,
+    "showValue": "auto",
+    "stacking": "none",
+    "groupWidth": 0.7,
+    "barWidth": 0.97,
+    "barRadius": 0,
+    "fullHighlight": false,
+    "tooltip": {
+      "mode": "single",
+      "sort": "none",
+      "hideZeros": false
+    },
+    "legend": {
+      "showLegend": true,
+      "displayMode": "list",
+      "placement": "bottom",
+      "calcs": []
+    },
+    "xField": "Orgao"
+  }
+}
