@@ -26,7 +26,7 @@ for data_atual in datas:
     pagina = 1
     total_paginas = 1 
     
-    print(f"\n📅 Iniciando extração do dia: {data_formatada}")
+    print(f"\n Iniciando extração do dia: {data_formatada}")
     
     while pagina <= total_paginas:
         # Endpoint de Contratos baseado no manual oficial do PNCP
