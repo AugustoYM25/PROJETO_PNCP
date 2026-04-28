@@ -1,4 +1,6 @@
-# OBJETIVOS:
+#Auditoria no Portal Nacional de Contas Públicas
+
+## OBJETIVOS:
 
 O projeto tem como objetivo centralizar e analisar os dados de contratos públicos do Portal Nacional de Contratações Públicas. A ideia é criar um ambiente de dados usando a arquitetura medalhão para entender os gastos do governo e aplicar modelos de machine learning. Todo o sistema funciona em um servidor local rodando SQL Server em uma máquina virtual.
 
@@ -7,6 +9,6 @@ Até o momento a fundação do projeto foi concluída com a construção da cama
 Os próximos passos focam na transformação desses dados. A camada prata vai cuidar da limpeza, remoção de duplicatas e padronização das informações no banco de dados. Depois a camada ouro vai organizar os dados em tabelas de fatos e dimensões, separando fornecedores, locais e datas. Com essa base pronta e modelada, o Grafana será conectado para a criação dos painéis de visualização e os modelos de machine learning entrarão em cena para extrair padrões e previsões dos gastos públicos.
 
 
-# INFRAESTRUTURA: 
+## INFRAESTRUTURA: 
 
 Todo o ambiente do projeto foi montado para rodar de forma isolada e local dentro de uma máquina virtual usando o VirtualBox com o sistema Windows Server. A infraestrutura base exige a instalação do banco de dados SQL Server para armazenar a carga de registros que chegam da api. A extração é feita com o Python na versão 3.12, que foi a versão mais estável que encontramos para evitar os conflitos com o processador da máquina virtual e as bibliotecas matemáticas. O Grafana também é instalado como um serviço direto nessa mesma vm, lendo os dados do sql server na porta local para gerar os painéis. Em relação ao disco, é recomendado ter uma boa sobra de armazenamento, pois só o banco de dados inicial e seus logs podem passar fácil de alguns gigabytes por causa do histórico longo do governo
