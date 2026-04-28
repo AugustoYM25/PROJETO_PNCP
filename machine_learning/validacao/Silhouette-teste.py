@@ -30,7 +30,7 @@ print("3.  K-Means na amostra")
 kmeans = MiniBatchKMeans(n_clusters=15, random_state=42, batch_size=1000)
 labels = kmeans.fit_predict(X_amostra)
 
-print("4. Calculando o Silhouette Score (Isso pode demorar um ou dois minutos)...")
+print("4. Calculando Score ")
 score = silhouette_score(X_amostra, labels, sample_size=20000)
 
 
