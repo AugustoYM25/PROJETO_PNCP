@@ -29,9 +29,9 @@ INSERT INTO gold.dim_perfis_ia (id_perfil_ml, nome_categoria, tipo_cluster) VALU
 (14, 'Insumos Diversos (Termo Genérico)', 'Colisão de Domínio'),
 
 
-(5, 'Contratos Agrupados por Jargão/Template', 'Baixa Coesão'),
-(16, 'Serviços e Aquisições Diversas (Outliers)', 'Lixeira '),
-(18, 'Serviços e Aquisições Diversas (Outliers)', 'Lixeira '),
+(5, 'Contratos Agrupados por Template', 'Baixa Coesão'),
+(16, 'Serviços e Aquisições Diversas ', 'Lixeira '),
+(18, 'Serviços e Aquisições Diversas ', 'Lixeira '),
 
 
 (9, 'Não Utilizado (Zerado)', 'Vazio'),
